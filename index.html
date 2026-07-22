@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meridian Aero Leasing (FZE)</title>
+  <meta name="description" content="Meridian Aero Leasing (FZE) company profile website." />
+  <style>
+    :root{
+      --bg:#f6f9fc;
+      --card:#ffffff;
+      --text:#17212b;
+      --muted:#5b6775;
+      --primary:#163a63;
+      --accent:#1d7cf2;
+      --line:#d9e2ec;
+      --shadow:0 10px 30px rgba(17, 38, 72, 0.08);
+      --radius:18px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:radial-gradient(circle at top, #edf4fb 0, #f6f9fc 36%, #ffffff 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    .container{
+      width:min(var(--max), 92vw);
+      margin:0 auto;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(255,255,255,0.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(217,226,236,0.9);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .logo{
+      width:52px;
+      height:52px;
+      min-width:52px;
+      min-height:52px;
+      border-radius:50%;
+      background:linear-gradient(135deg, #3aa0ff, #1877d5 55%, #0c4fa0);
+      box-shadow:0 10px 24px rgba(17,68,126,0.18);
+      flex:0 0 52px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .logo::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:50%;
+      background:
+        radial-gradient(circle at 32% 30%, rgba(255,255,255,0.35) 0 10%, transparent 11%),
+        radial-gradient(circle at 50% 50%, transparent 0 38%, rgba(255,255,255,0.10) 39% 100%);
+    }
+
+    .logo::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:22px;
+      height:22px;
+      transform:translate(-50%, -50%) rotate(45deg);
+      background:#ffffff;
+      clip-path:polygon(50% 0%, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0% 50%, 37% 37%);
+    }
+
+    .brand span{
+      font-weight:700;
+      color:var(--primary);
+      font-size:16px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .navlinks{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .navlinks a:hover{color:var(--primary)}
+
+    .hero{
+      padding:54px 0 26px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr 0.85fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:#eaf3ff;
+      color:#245a9a;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:0.04em;
+      text-transform:uppercase;
+    }
+
+    h1{
+      font-size:clamp(38px, 5.4vw, 62px);
+      line-height:1.03;
+      margin:18px 0 14px;
+      color:var(--primary);
+      letter-spacing:-0.03em;
+    }
+
+    .lead{
+      font-size:18px;
+      color:var(--muted);
+      max-width:60ch;
+      margin:0;
+    }
+
+    .hero-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-image{
+      height:380px;
+      border-radius:18px;
+      overflow:hidden;
+      position:relative;
+      background:linear-gradient(135deg, #dcecff 0%, #fdfefe 60%, #eaf2fb 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .plane{
+      width:min(86%, 520px);
+      aspect-ratio:16 / 9;
+      background:linear-gradient(180deg, #b9d6f5, #6c9fdb);
+      clip-path:polygon(0% 76%, 12% 66%, 36% 24%, 44% 25%, 54% 33%, 78% 12%, 100% 9%, 79% 31%, 92% 42%, 100% 49%, 100% 60%, 94% 59%, 74% 52%, 54% 76%, 43% 88%, 30% 90%, 22% 82%, 11% 80%);
+      filter:drop-shadow(0 18px 32px rgba(8,26,48,0.2));
+    }
+
+    section{padding:24px 0}
+
+    .section-title{
+      font-size:30px;
+      color:var(--primary);
+      margin:0 0 16px;
+      letter-spacing:-0.02em;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:18px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .card h3{
+      margin:0 0 12px;
+      color:var(--primary);
+      font-size:20px;
+    }
+
+    .card p{
+      margin:10px 0;
+      color:var(--text);
+    }
+
+    ul{
+      margin:12px 0 0 18px;
+      padding:0;
+    }
+
+    li{margin:8px 0}
+
+    .facts{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+      gap:16px;
+    }
+
+    .fact{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .fact b{
+      display:block;
+      color:var(--primary);
+      margin-bottom:6px;
+    }
+
+    .footer{
+      padding:28px 0 44px;
+      color:var(--muted);
+      font-size:14px;
+      text-align:center;
+    }
+
+    @media (max-width:920px){
+      .hero-grid,
+      .grid-2,
+      .facts{
+        grid-template-columns:1fr;
+      }
+
+      .hero-image{height:300px}
+
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .navlinks{justify-content:flex-start}
+    }
+
+    @media (max-width:480px){
+      .logo{
+        width:46px;
+        height:46px;
+        min-width:46px;
+        min-height:46px;
+        flex-basis:46px;
+      }
+
+      .brand span{font-size:14px}
+      .hero{padding-top:34px}
+      .lead{font-size:16px}
+      .section-title{font-size:26px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Meridian Aero Leasing (FZE)</span>
+      </div>
+      <nav class="navlinks">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#market">Market</a>
+        <a href="#management">Management</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container hero">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Company Profile</span>
+          <h1>Meridian Aero Leasing (FZE)</h1>
+          <p class="lead">
+            A UAE-based aviation company focused on aircraft charter solutions,
+            leasing and rental services, aviation equipment rental, and aviation-related
+            support for private, corporate, and commercial clients.
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-image">
+            <div class="plane" aria-label="Aviation illustration"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">Company Overview</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Registration Details</h3>
+            <p><strong>Company Registration:</strong> Sharjah Free Zone, United Arab Emirates</p>
+            <p><strong>Registered Address:</strong> SAIF Office Q1-09-007/A, Sharjah Airport International Free Zone (SAIF Zone), Sharjah, United Arab Emirates</p>
+            <p><strong>Shareholder / Managing Director:</strong> Mr. Stefan Rosina</p>
+          </div>
+
+          <div class="card">
+            <h3>Overview</h3>
+            <p>
+              Meridian Aero Leasing (FZE) is established to develop business opportunities
+              in the aviation sector by providing professional aviation solutions to clients
+              and partners.
+            </p>
+            <p>
+              All aviation activities are intended to be carried out in compliance with
+              applicable UAE regulations and subject to relevant approvals, permits,
+              and licenses.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">Business Activities</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Core Services</h3>
+            <ul>
+              <li>Aircraft Charter Services</li>
+              <li>Aircraft Leasing and Rental Solutions</li>
+              <li>Aviation Equipment Rental</li>
+              <li>Aviation-related Support Services</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Business Model</h3>
+            <p>
+              The company operates through cooperation with aircraft owners, aviation
+              operators, service providers, and industry partners.
+            </p>
+            <ul>
+              <li>Facilitating aircraft charter arrangements</li>
+              <li>Providing aircraft rental solutions</li>
+              <li>Supporting clients with aviation asset access</li>
+              <li>Developing partnerships in the international aviation market</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="market">
+      <div class="container">
+        <h2 class="section-title">Markets and Scope</h2>
+        <div class="facts">
+          <div class="fact">
+            <b>Private Clients</b>
+            Executive aviation solutions for individuals.
+          </div>
+          <div class="fact">
+            <b>Corporate Clients</b>
+            Flexible aviation support for companies and business groups.
+          </div>
+          <div class="fact">
+            <b>International Reach</b>
+            Services aimed at clients and partners worldwide.
+          </div>
+          <div class="fact">
+            <b>UAE Base</b>
+            Strategic location with strong aviation infrastructure.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="management">
+      <div class="container">
+        <h2 class="section-title">Management</h2>
+        <div class="card">
+          <h3>Mr. Stefan Rosina</h3>
+          <p>
+            Shareholder / Managing Director responsible for strategic development,
+            business relationships, and overall management activities.
+          </p>
+          <p>
+            The company is committed to UAE laws, international business standards,
+            and compliance requirements before commencing any regulated aviation activities.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer">
+    Meridian Aero Leasing (FZE) — Company Profile Website
+  </div>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

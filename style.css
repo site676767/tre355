@@ -1,0 +1,5 @@
+.hero-image {
+    /* ... остальные стили ... */
+    justify-self: end;
+    margin-left: auto;
+}
